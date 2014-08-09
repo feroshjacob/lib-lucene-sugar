@@ -71,7 +71,7 @@ object LuceneFieldHelpers {
      */
     implicit object LuceneFieldLikeText extends LuceneFieldLike[LuceneText] {
       def addIndexedField(doc: Document, name: String, value: LuceneText, stored: Store) {
-        doc.add(new StringField(name, value.text, stored))
+        doc.add(new TextField(name, value.text, stored))
       }
 
       def addStoredOnlyField(doc: Document, name: String, value: LuceneText) {
